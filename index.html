@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Mis XV Camila</title>
+
+<style>
+*{
+  box-sizing:border-box;
+}
+
+body{
+  margin:0;
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  overflow:hidden;
+  font-family:Georgia, serif;
+  background:linear-gradient(#dff5ff,#a8dcff);
+}
+
+.sparkles{
+  position:absolute;
+  inset:0;
+  background-image:
+  radial-gradient(circle,#fff 2px,transparent 3px);
+  background-size:70px 70px;
+}
+
+.container{
+  text-align:center;
+  z-index:2;
+}
+
+.envelope{
+  width:300px;
+  height:200px;
+  background:#a9ddf8;
+  border:4px solid #d7d7d7;
+  border-radius:15px;
+  position:relative;
+  box-shadow:0 15px 30px #888;
+}
+
+.flap{
+  position:absolute;
+  width:0;
+  height:0;
+  border-left:150px solid transparent;
+  border-right:150px solid transparent;
+  border-top:110px solid #effaff;
+  top:0;
+  left:0;
+  transform-origin:top;
+  transition:1.8s;
+  z-index:3;
+}
+
+.letter{
+  position:absolute;
+  width:240px;
+  height:150px;
+  left:30px;
+  top:70px;
+  background:white;
+  border:3px solid silver;
+  border-radius:10px;
+  padding-top:35px;
+  color:#9b9b9b;
+  opacity:0;
+  transition:2s;
+}
+
+.open .flap{
+  transform:rotateX(180deg);
+}
+
+.open .letter{
+  top:-100px;
+  opacity:1;
+}
+
+button{
+  margin-top:35px;
+  padding:14px 35px;
+  border-radius:30px;
+  border:2px solid silver;
+  background:white;
+  color:#777;
+  font-size:18px;
+}
+
+.hidden{
+  display:none;
+}
+
+a{
+  text-decoration:none;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="sparkles"></div>
+
+<div class="container">
+
+<div class="envelope" id="sobre">
+
+<div class="flap"></div>
+
+<div class="letter">
+✨ Mis XV Camila ✨
+<br><br>
+Una invitación especial 💙
+</div>
+
+</div>
+
+<button onclick="abrir()">
+💌 Abrir invitación
+</button>
+
+<a id="canva" class="hidden" href="https://mis15macamila.my.canva.site/">
+<button>
+✨ Entrar a la invitación ✨
+</button>
+</a>
+
+</div>
+
+
+<script>
+
+function abrir(){
+
+document.getElementById("sobre")
+.classList.add("open");
+
+setTimeout(function(){
+
+document.getElementById("canva")
+.classList.remove("hidden");
+
+},3000);
+
+}
+
+</script>
+
+</body>
+</html>
